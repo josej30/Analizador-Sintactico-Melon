@@ -1,0 +1,3070 @@
+Created by PLY version 3.3 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> expression
+Rule 1     expression -> expression MINUS expression
+Rule 2     expression -> expression PLUS expression
+Rule 3     expression -> expression TIMES expression
+Rule 4     expression -> expression DIVIDE expression
+Rule 5     expression -> constantes
+Rule 6     expression -> variables
+Rule 7     expression -> expression AND expression
+Rule 8     expression -> expression OR expression
+Rule 9     expression -> expression GT expression
+Rule 10    expression -> expression LT expression
+Rule 11    expression -> expression EQ expression
+Rule 12    expression -> expression NE expression
+Rule 13    expression -> expression GE expression
+Rule 14    expression -> expression LE expression
+Rule 15    expression -> expression DOSPUNTOS expression
+Rule 16    expression -> NOT expression
+Rule 17    expression -> IF expression THEN expression ELSE expression FI
+Rule 18    expression -> APAREN expression CPAREN
+Rule 19    expression -> LISTA
+Rule 20    patron -> constantes
+Rule 21    patron -> variables
+Rule 22    patron -> patron DOSPUNTOS patron
+Rule 23    patron -> APAREN patron CPAREN
+Rule 24    variables -> ID
+Rule 25    constantes -> number
+Rule 26    constantes -> false
+Rule 27    constantes -> true
+Rule 28    number -> NUMBER
+Rule 29    true -> TRUE
+Rule 30    false -> FALSE
+Rule 31    expression -> LET patron EQ expression IN expression TEL
+Rule 32    expression -> FUN gen NUF
+Rule 33    listapat -> listapat patron
+Rule 34    listapat -> patron
+Rule 35    gen -> listapat FLECHA expression
+Rule 36    gen -> gen PIPE listapat FLECHA expression
+
+Terminals, with rules where they appear
+
+AND                  : 7
+APAREN               : 18 23
+CPAREN               : 18 23
+DIVIDE               : 4
+DOSPUNTOS            : 15 22
+ELSE                 : 17
+EQ                   : 11 31
+FALSE                : 30
+FI                   : 17
+FLECHA               : 35 36
+FUN                  : 32
+GE                   : 13
+GT                   : 9
+ID                   : 24
+IF                   : 17
+IN                   : 31
+LE                   : 14
+LET                  : 31
+LISTA                : 19
+LT                   : 10
+MINUS                : 1
+NE                   : 12
+NOT                  : 16
+NUF                  : 32
+NUMBER               : 28
+OR                   : 8
+PIPE                 : 36
+PLUS                 : 2
+TEL                  : 31
+THEN                 : 17
+TIMES                : 3
+TRUE                 : 29
+error                : 
+
+Nonterminals, with rules where they appear
+
+constantes           : 5 20
+expression           : 1 1 2 2 3 3 4 4 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 15 16 17 17 17 18 31 31 35 36 0
+false                : 26
+gen                  : 32 36
+listapat             : 33 35 36
+number               : 25
+patron               : 22 22 23 31 33 34
+true                 : 27
+variables            : 6 21
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 16
+
+state 1
+
+    (26) constantes -> false .
+
+    MINUS           reduce using rule 26 (constantes -> false .)
+    PLUS            reduce using rule 26 (constantes -> false .)
+    TIMES           reduce using rule 26 (constantes -> false .)
+    DIVIDE          reduce using rule 26 (constantes -> false .)
+    AND             reduce using rule 26 (constantes -> false .)
+    OR              reduce using rule 26 (constantes -> false .)
+    GT              reduce using rule 26 (constantes -> false .)
+    LT              reduce using rule 26 (constantes -> false .)
+    EQ              reduce using rule 26 (constantes -> false .)
+    NE              reduce using rule 26 (constantes -> false .)
+    GE              reduce using rule 26 (constantes -> false .)
+    LE              reduce using rule 26 (constantes -> false .)
+    DOSPUNTOS       reduce using rule 26 (constantes -> false .)
+    NUF             reduce using rule 26 (constantes -> false .)
+    PIPE            reduce using rule 26 (constantes -> false .)
+    $end            reduce using rule 26 (constantes -> false .)
+    CPAREN          reduce using rule 26 (constantes -> false .)
+    THEN            reduce using rule 26 (constantes -> false .)
+    ELSE            reduce using rule 26 (constantes -> false .)
+    IN              reduce using rule 26 (constantes -> false .)
+    FI              reduce using rule 26 (constantes -> false .)
+    TEL             reduce using rule 26 (constantes -> false .)
+    FLECHA          reduce using rule 26 (constantes -> false .)
+    APAREN          reduce using rule 26 (constantes -> false .)
+    ID              reduce using rule 26 (constantes -> false .)
+    NUMBER          reduce using rule 26 (constantes -> false .)
+    FALSE           reduce using rule 26 (constantes -> false .)
+    TRUE            reduce using rule 26 (constantes -> false .)
+
+
+state 2
+
+    (6) expression -> variables .
+
+    CPAREN          reduce using rule 6 (expression -> variables .)
+    MINUS           reduce using rule 6 (expression -> variables .)
+    PLUS            reduce using rule 6 (expression -> variables .)
+    TIMES           reduce using rule 6 (expression -> variables .)
+    DIVIDE          reduce using rule 6 (expression -> variables .)
+    AND             reduce using rule 6 (expression -> variables .)
+    OR              reduce using rule 6 (expression -> variables .)
+    GT              reduce using rule 6 (expression -> variables .)
+    LT              reduce using rule 6 (expression -> variables .)
+    EQ              reduce using rule 6 (expression -> variables .)
+    NE              reduce using rule 6 (expression -> variables .)
+    GE              reduce using rule 6 (expression -> variables .)
+    LE              reduce using rule 6 (expression -> variables .)
+    DOSPUNTOS       reduce using rule 6 (expression -> variables .)
+    $end            reduce using rule 6 (expression -> variables .)
+    THEN            reduce using rule 6 (expression -> variables .)
+    NUF             reduce using rule 6 (expression -> variables .)
+    PIPE            reduce using rule 6 (expression -> variables .)
+    ELSE            reduce using rule 6 (expression -> variables .)
+    IN              reduce using rule 6 (expression -> variables .)
+    FI              reduce using rule 6 (expression -> variables .)
+    TEL             reduce using rule 6 (expression -> variables .)
+
+
+state 3
+
+    (25) constantes -> number .
+
+    MINUS           reduce using rule 25 (constantes -> number .)
+    PLUS            reduce using rule 25 (constantes -> number .)
+    TIMES           reduce using rule 25 (constantes -> number .)
+    DIVIDE          reduce using rule 25 (constantes -> number .)
+    AND             reduce using rule 25 (constantes -> number .)
+    OR              reduce using rule 25 (constantes -> number .)
+    GT              reduce using rule 25 (constantes -> number .)
+    LT              reduce using rule 25 (constantes -> number .)
+    EQ              reduce using rule 25 (constantes -> number .)
+    NE              reduce using rule 25 (constantes -> number .)
+    GE              reduce using rule 25 (constantes -> number .)
+    LE              reduce using rule 25 (constantes -> number .)
+    DOSPUNTOS       reduce using rule 25 (constantes -> number .)
+    NUF             reduce using rule 25 (constantes -> number .)
+    PIPE            reduce using rule 25 (constantes -> number .)
+    $end            reduce using rule 25 (constantes -> number .)
+    CPAREN          reduce using rule 25 (constantes -> number .)
+    THEN            reduce using rule 25 (constantes -> number .)
+    ELSE            reduce using rule 25 (constantes -> number .)
+    IN              reduce using rule 25 (constantes -> number .)
+    FI              reduce using rule 25 (constantes -> number .)
+    TEL             reduce using rule 25 (constantes -> number .)
+    FLECHA          reduce using rule 25 (constantes -> number .)
+    APAREN          reduce using rule 25 (constantes -> number .)
+    ID              reduce using rule 25 (constantes -> number .)
+    NUMBER          reduce using rule 25 (constantes -> number .)
+    FALSE           reduce using rule 25 (constantes -> number .)
+    TRUE            reduce using rule 25 (constantes -> number .)
+
+
+state 4
+
+    (32) expression -> FUN . gen NUF
+    (35) gen -> . listapat FLECHA expression
+    (36) gen -> . gen PIPE listapat FLECHA expression
+    (33) listapat -> . listapat patron
+    (34) listapat -> . patron
+    (20) patron -> . constantes
+    (21) patron -> . variables
+    (22) patron -> . patron DOSPUNTOS patron
+    (23) patron -> . APAREN patron CPAREN
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    APAREN          shift and go to state 18
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    patron                         shift and go to state 17
+    true                           shift and go to state 6
+    variables                      shift and go to state 19
+    listapat                       shift and go to state 20
+    number                         shift and go to state 3
+    constantes                     shift and go to state 21
+    gen                            shift and go to state 22
+
+state 5
+
+    (29) true -> TRUE .
+
+    FI              reduce using rule 29 (true -> TRUE .)
+    MINUS           reduce using rule 29 (true -> TRUE .)
+    PLUS            reduce using rule 29 (true -> TRUE .)
+    TIMES           reduce using rule 29 (true -> TRUE .)
+    DIVIDE          reduce using rule 29 (true -> TRUE .)
+    AND             reduce using rule 29 (true -> TRUE .)
+    OR              reduce using rule 29 (true -> TRUE .)
+    GT              reduce using rule 29 (true -> TRUE .)
+    LT              reduce using rule 29 (true -> TRUE .)
+    EQ              reduce using rule 29 (true -> TRUE .)
+    NE              reduce using rule 29 (true -> TRUE .)
+    GE              reduce using rule 29 (true -> TRUE .)
+    LE              reduce using rule 29 (true -> TRUE .)
+    DOSPUNTOS       reduce using rule 29 (true -> TRUE .)
+    FLECHA          reduce using rule 29 (true -> TRUE .)
+    APAREN          reduce using rule 29 (true -> TRUE .)
+    ID              reduce using rule 29 (true -> TRUE .)
+    NUMBER          reduce using rule 29 (true -> TRUE .)
+    FALSE           reduce using rule 29 (true -> TRUE .)
+    TRUE            reduce using rule 29 (true -> TRUE .)
+    $end            reduce using rule 29 (true -> TRUE .)
+    CPAREN          reduce using rule 29 (true -> TRUE .)
+    THEN            reduce using rule 29 (true -> TRUE .)
+    NUF             reduce using rule 29 (true -> TRUE .)
+    PIPE            reduce using rule 29 (true -> TRUE .)
+    ELSE            reduce using rule 29 (true -> TRUE .)
+    IN              reduce using rule 29 (true -> TRUE .)
+    TEL             reduce using rule 29 (true -> TRUE .)
+
+
+state 6
+
+    (27) constantes -> true .
+
+    MINUS           reduce using rule 27 (constantes -> true .)
+    PLUS            reduce using rule 27 (constantes -> true .)
+    TIMES           reduce using rule 27 (constantes -> true .)
+    DIVIDE          reduce using rule 27 (constantes -> true .)
+    AND             reduce using rule 27 (constantes -> true .)
+    OR              reduce using rule 27 (constantes -> true .)
+    GT              reduce using rule 27 (constantes -> true .)
+    LT              reduce using rule 27 (constantes -> true .)
+    EQ              reduce using rule 27 (constantes -> true .)
+    NE              reduce using rule 27 (constantes -> true .)
+    GE              reduce using rule 27 (constantes -> true .)
+    LE              reduce using rule 27 (constantes -> true .)
+    DOSPUNTOS       reduce using rule 27 (constantes -> true .)
+    NUF             reduce using rule 27 (constantes -> true .)
+    PIPE            reduce using rule 27 (constantes -> true .)
+    $end            reduce using rule 27 (constantes -> true .)
+    CPAREN          reduce using rule 27 (constantes -> true .)
+    THEN            reduce using rule 27 (constantes -> true .)
+    ELSE            reduce using rule 27 (constantes -> true .)
+    IN              reduce using rule 27 (constantes -> true .)
+    FI              reduce using rule 27 (constantes -> true .)
+    TEL             reduce using rule 27 (constantes -> true .)
+    FLECHA          reduce using rule 27 (constantes -> true .)
+    APAREN          reduce using rule 27 (constantes -> true .)
+    ID              reduce using rule 27 (constantes -> true .)
+    NUMBER          reduce using rule 27 (constantes -> true .)
+    FALSE           reduce using rule 27 (constantes -> true .)
+    TRUE            reduce using rule 27 (constantes -> true .)
+
+
+state 7
+
+    (24) variables -> ID .
+
+    FI              reduce using rule 24 (variables -> ID .)
+    MINUS           reduce using rule 24 (variables -> ID .)
+    PLUS            reduce using rule 24 (variables -> ID .)
+    TIMES           reduce using rule 24 (variables -> ID .)
+    DIVIDE          reduce using rule 24 (variables -> ID .)
+    AND             reduce using rule 24 (variables -> ID .)
+    OR              reduce using rule 24 (variables -> ID .)
+    GT              reduce using rule 24 (variables -> ID .)
+    LT              reduce using rule 24 (variables -> ID .)
+    EQ              reduce using rule 24 (variables -> ID .)
+    NE              reduce using rule 24 (variables -> ID .)
+    GE              reduce using rule 24 (variables -> ID .)
+    LE              reduce using rule 24 (variables -> ID .)
+    DOSPUNTOS       reduce using rule 24 (variables -> ID .)
+    $end            reduce using rule 24 (variables -> ID .)
+    CPAREN          reduce using rule 24 (variables -> ID .)
+    THEN            reduce using rule 24 (variables -> ID .)
+    NUF             reduce using rule 24 (variables -> ID .)
+    PIPE            reduce using rule 24 (variables -> ID .)
+    ELSE            reduce using rule 24 (variables -> ID .)
+    IN              reduce using rule 24 (variables -> ID .)
+    TEL             reduce using rule 24 (variables -> ID .)
+    FLECHA          reduce using rule 24 (variables -> ID .)
+    APAREN          reduce using rule 24 (variables -> ID .)
+    ID              reduce using rule 24 (variables -> ID .)
+    NUMBER          reduce using rule 24 (variables -> ID .)
+    FALSE           reduce using rule 24 (variables -> ID .)
+    TRUE            reduce using rule 24 (variables -> ID .)
+
+
+state 8
+
+    (28) number -> NUMBER .
+
+    MINUS           reduce using rule 28 (number -> NUMBER .)
+    PLUS            reduce using rule 28 (number -> NUMBER .)
+    TIMES           reduce using rule 28 (number -> NUMBER .)
+    DIVIDE          reduce using rule 28 (number -> NUMBER .)
+    AND             reduce using rule 28 (number -> NUMBER .)
+    OR              reduce using rule 28 (number -> NUMBER .)
+    GT              reduce using rule 28 (number -> NUMBER .)
+    LT              reduce using rule 28 (number -> NUMBER .)
+    EQ              reduce using rule 28 (number -> NUMBER .)
+    NE              reduce using rule 28 (number -> NUMBER .)
+    GE              reduce using rule 28 (number -> NUMBER .)
+    LE              reduce using rule 28 (number -> NUMBER .)
+    DOSPUNTOS       reduce using rule 28 (number -> NUMBER .)
+    $end            reduce using rule 28 (number -> NUMBER .)
+    CPAREN          reduce using rule 28 (number -> NUMBER .)
+    THEN            reduce using rule 28 (number -> NUMBER .)
+    NUF             reduce using rule 28 (number -> NUMBER .)
+    PIPE            reduce using rule 28 (number -> NUMBER .)
+    ELSE            reduce using rule 28 (number -> NUMBER .)
+    IN              reduce using rule 28 (number -> NUMBER .)
+    FI              reduce using rule 28 (number -> NUMBER .)
+    TEL             reduce using rule 28 (number -> NUMBER .)
+    FLECHA          reduce using rule 28 (number -> NUMBER .)
+    APAREN          reduce using rule 28 (number -> NUMBER .)
+    ID              reduce using rule 28 (number -> NUMBER .)
+    NUMBER          reduce using rule 28 (number -> NUMBER .)
+    FALSE           reduce using rule 28 (number -> NUMBER .)
+    TRUE            reduce using rule 28 (number -> NUMBER .)
+
+
+state 9
+
+    (18) expression -> APAREN . expression CPAREN
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 23
+
+state 10
+
+    (17) expression -> IF . expression THEN expression ELSE expression FI
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 24
+
+state 11
+
+    (30) false -> FALSE .
+
+    MINUS           reduce using rule 30 (false -> FALSE .)
+    PLUS            reduce using rule 30 (false -> FALSE .)
+    TIMES           reduce using rule 30 (false -> FALSE .)
+    DIVIDE          reduce using rule 30 (false -> FALSE .)
+    AND             reduce using rule 30 (false -> FALSE .)
+    OR              reduce using rule 30 (false -> FALSE .)
+    GT              reduce using rule 30 (false -> FALSE .)
+    LT              reduce using rule 30 (false -> FALSE .)
+    EQ              reduce using rule 30 (false -> FALSE .)
+    NE              reduce using rule 30 (false -> FALSE .)
+    GE              reduce using rule 30 (false -> FALSE .)
+    LE              reduce using rule 30 (false -> FALSE .)
+    DOSPUNTOS       reduce using rule 30 (false -> FALSE .)
+    $end            reduce using rule 30 (false -> FALSE .)
+    CPAREN          reduce using rule 30 (false -> FALSE .)
+    THEN            reduce using rule 30 (false -> FALSE .)
+    NUF             reduce using rule 30 (false -> FALSE .)
+    PIPE            reduce using rule 30 (false -> FALSE .)
+    ELSE            reduce using rule 30 (false -> FALSE .)
+    IN              reduce using rule 30 (false -> FALSE .)
+    FI              reduce using rule 30 (false -> FALSE .)
+    TEL             reduce using rule 30 (false -> FALSE .)
+    FLECHA          reduce using rule 30 (false -> FALSE .)
+    APAREN          reduce using rule 30 (false -> FALSE .)
+    ID              reduce using rule 30 (false -> FALSE .)
+    NUMBER          reduce using rule 30 (false -> FALSE .)
+    FALSE           reduce using rule 30 (false -> FALSE .)
+    TRUE            reduce using rule 30 (false -> FALSE .)
+
+
+state 12
+
+    (19) expression -> LISTA .
+
+    CPAREN          reduce using rule 19 (expression -> LISTA .)
+    MINUS           reduce using rule 19 (expression -> LISTA .)
+    PLUS            reduce using rule 19 (expression -> LISTA .)
+    TIMES           reduce using rule 19 (expression -> LISTA .)
+    DIVIDE          reduce using rule 19 (expression -> LISTA .)
+    AND             reduce using rule 19 (expression -> LISTA .)
+    OR              reduce using rule 19 (expression -> LISTA .)
+    GT              reduce using rule 19 (expression -> LISTA .)
+    LT              reduce using rule 19 (expression -> LISTA .)
+    EQ              reduce using rule 19 (expression -> LISTA .)
+    NE              reduce using rule 19 (expression -> LISTA .)
+    GE              reduce using rule 19 (expression -> LISTA .)
+    LE              reduce using rule 19 (expression -> LISTA .)
+    DOSPUNTOS       reduce using rule 19 (expression -> LISTA .)
+    $end            reduce using rule 19 (expression -> LISTA .)
+    THEN            reduce using rule 19 (expression -> LISTA .)
+    NUF             reduce using rule 19 (expression -> LISTA .)
+    PIPE            reduce using rule 19 (expression -> LISTA .)
+    ELSE            reduce using rule 19 (expression -> LISTA .)
+    IN              reduce using rule 19 (expression -> LISTA .)
+    FI              reduce using rule 19 (expression -> LISTA .)
+    TEL             reduce using rule 19 (expression -> LISTA .)
+
+
+state 13
+
+    (31) expression -> LET . patron EQ expression IN expression TEL
+    (20) patron -> . constantes
+    (21) patron -> . variables
+    (22) patron -> . patron DOSPUNTOS patron
+    (23) patron -> . APAREN patron CPAREN
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    APAREN          shift and go to state 18
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    patron                         shift and go to state 25
+    true                           shift and go to state 6
+    variables                      shift and go to state 19
+    number                         shift and go to state 3
+    constantes                     shift and go to state 21
+
+state 14
+
+    (16) expression -> NOT . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 26
+
+state 15
+
+    (5) expression -> constantes .
+
+    CPAREN          reduce using rule 5 (expression -> constantes .)
+    MINUS           reduce using rule 5 (expression -> constantes .)
+    PLUS            reduce using rule 5 (expression -> constantes .)
+    TIMES           reduce using rule 5 (expression -> constantes .)
+    DIVIDE          reduce using rule 5 (expression -> constantes .)
+    AND             reduce using rule 5 (expression -> constantes .)
+    OR              reduce using rule 5 (expression -> constantes .)
+    GT              reduce using rule 5 (expression -> constantes .)
+    LT              reduce using rule 5 (expression -> constantes .)
+    EQ              reduce using rule 5 (expression -> constantes .)
+    NE              reduce using rule 5 (expression -> constantes .)
+    GE              reduce using rule 5 (expression -> constantes .)
+    LE              reduce using rule 5 (expression -> constantes .)
+    DOSPUNTOS       reduce using rule 5 (expression -> constantes .)
+    $end            reduce using rule 5 (expression -> constantes .)
+    THEN            reduce using rule 5 (expression -> constantes .)
+    NUF             reduce using rule 5 (expression -> constantes .)
+    PIPE            reduce using rule 5 (expression -> constantes .)
+    ELSE            reduce using rule 5 (expression -> constantes .)
+    IN              reduce using rule 5 (expression -> constantes .)
+    FI              reduce using rule 5 (expression -> constantes .)
+    TEL             reduce using rule 5 (expression -> constantes .)
+
+
+state 16
+
+    (0) S' -> expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    GT              shift and go to state 29
+    LT              shift and go to state 35
+    EQ              shift and go to state 32
+    NE              shift and go to state 33
+    GE              shift and go to state 30
+    LE              shift and go to state 36
+    DOSPUNTOS       shift and go to state 28
+
+
+state 17
+
+    (34) listapat -> patron .
+    (22) patron -> patron . DOSPUNTOS patron
+
+    FLECHA          reduce using rule 34 (listapat -> patron .)
+    APAREN          reduce using rule 34 (listapat -> patron .)
+    ID              reduce using rule 34 (listapat -> patron .)
+    NUMBER          reduce using rule 34 (listapat -> patron .)
+    FALSE           reduce using rule 34 (listapat -> patron .)
+    TRUE            reduce using rule 34 (listapat -> patron .)
+    DOSPUNTOS       shift and go to state 40
+
+
+state 18
+
+    (23) patron -> APAREN . patron CPAREN
+    (20) patron -> . constantes
+    (21) patron -> . variables
+    (22) patron -> . patron DOSPUNTOS patron
+    (23) patron -> . APAREN patron CPAREN
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    APAREN          shift and go to state 18
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    patron                         shift and go to state 41
+    variables                      shift and go to state 19
+    number                         shift and go to state 3
+    constantes                     shift and go to state 21
+    true                           shift and go to state 6
+
+state 19
+
+    (21) patron -> variables .
+
+    DOSPUNTOS       reduce using rule 21 (patron -> variables .)
+    FLECHA          reduce using rule 21 (patron -> variables .)
+    APAREN          reduce using rule 21 (patron -> variables .)
+    ID              reduce using rule 21 (patron -> variables .)
+    NUMBER          reduce using rule 21 (patron -> variables .)
+    FALSE           reduce using rule 21 (patron -> variables .)
+    TRUE            reduce using rule 21 (patron -> variables .)
+    EQ              reduce using rule 21 (patron -> variables .)
+    CPAREN          reduce using rule 21 (patron -> variables .)
+
+
+state 20
+
+    (35) gen -> listapat . FLECHA expression
+    (33) listapat -> listapat . patron
+    (20) patron -> . constantes
+    (21) patron -> . variables
+    (22) patron -> . patron DOSPUNTOS patron
+    (23) patron -> . APAREN patron CPAREN
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    FLECHA          shift and go to state 43
+    APAREN          shift and go to state 18
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    patron                         shift and go to state 42
+    true                           shift and go to state 6
+    variables                      shift and go to state 19
+    number                         shift and go to state 3
+    constantes                     shift and go to state 21
+
+state 21
+
+    (20) patron -> constantes .
+
+    DOSPUNTOS       reduce using rule 20 (patron -> constantes .)
+    FLECHA          reduce using rule 20 (patron -> constantes .)
+    APAREN          reduce using rule 20 (patron -> constantes .)
+    ID              reduce using rule 20 (patron -> constantes .)
+    NUMBER          reduce using rule 20 (patron -> constantes .)
+    FALSE           reduce using rule 20 (patron -> constantes .)
+    TRUE            reduce using rule 20 (patron -> constantes .)
+    EQ              reduce using rule 20 (patron -> constantes .)
+    CPAREN          reduce using rule 20 (patron -> constantes .)
+
+
+state 22
+
+    (32) expression -> FUN gen . NUF
+    (36) gen -> gen . PIPE listapat FLECHA expression
+
+    NUF             shift and go to state 45
+    PIPE            shift and go to state 44
+
+
+state 23
+
+    (18) expression -> APAREN expression . CPAREN
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          shift and go to state 46
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    GT              shift and go to state 29
+    LT              shift and go to state 35
+    EQ              shift and go to state 32
+    NE              shift and go to state 33
+    GE              shift and go to state 30
+    LE              shift and go to state 36
+    DOSPUNTOS       shift and go to state 28
+
+
+state 24
+
+    (17) expression -> IF expression . THEN expression ELSE expression FI
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    THEN            shift and go to state 47
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    GT              shift and go to state 29
+    LT              shift and go to state 35
+    EQ              shift and go to state 32
+    NE              shift and go to state 33
+    GE              shift and go to state 30
+    LE              shift and go to state 36
+    DOSPUNTOS       shift and go to state 28
+
+
+state 25
+
+    (31) expression -> LET patron . EQ expression IN expression TEL
+    (22) patron -> patron . DOSPUNTOS patron
+
+    EQ              shift and go to state 48
+    DOSPUNTOS       shift and go to state 40
+
+
+state 26
+
+    (16) expression -> NOT expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 16 (expression -> NOT expression .)
+    MINUS           reduce using rule 16 (expression -> NOT expression .)
+    PLUS            reduce using rule 16 (expression -> NOT expression .)
+    TIMES           reduce using rule 16 (expression -> NOT expression .)
+    DIVIDE          reduce using rule 16 (expression -> NOT expression .)
+    AND             reduce using rule 16 (expression -> NOT expression .)
+    OR              reduce using rule 16 (expression -> NOT expression .)
+    GT              reduce using rule 16 (expression -> NOT expression .)
+    LT              reduce using rule 16 (expression -> NOT expression .)
+    EQ              reduce using rule 16 (expression -> NOT expression .)
+    NE              reduce using rule 16 (expression -> NOT expression .)
+    GE              reduce using rule 16 (expression -> NOT expression .)
+    LE              reduce using rule 16 (expression -> NOT expression .)
+    $end            reduce using rule 16 (expression -> NOT expression .)
+    THEN            reduce using rule 16 (expression -> NOT expression .)
+    NUF             reduce using rule 16 (expression -> NOT expression .)
+    PIPE            reduce using rule 16 (expression -> NOT expression .)
+    ELSE            reduce using rule 16 (expression -> NOT expression .)
+    IN              reduce using rule 16 (expression -> NOT expression .)
+    FI              reduce using rule 16 (expression -> NOT expression .)
+    TEL             reduce using rule 16 (expression -> NOT expression .)
+    DOSPUNTOS       shift and go to state 28
+
+  ! DOSPUNTOS       [ reduce using rule 16 (expression -> NOT expression .) ]
+  ! MINUS           [ shift and go to state 38 ]
+  ! PLUS            [ shift and go to state 37 ]
+  ! TIMES           [ shift and go to state 34 ]
+  ! DIVIDE          [ shift and go to state 31 ]
+  ! AND             [ shift and go to state 27 ]
+  ! OR              [ shift and go to state 39 ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 27
+
+    (7) expression -> expression AND . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 49
+
+state 28
+
+    (15) expression -> expression DOSPUNTOS . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 50
+
+state 29
+
+    (9) expression -> expression GT . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 51
+
+state 30
+
+    (13) expression -> expression GE . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 52
+
+state 31
+
+    (4) expression -> expression DIVIDE . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 53
+
+state 32
+
+    (11) expression -> expression EQ . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 54
+
+state 33
+
+    (12) expression -> expression NE . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 55
+
+state 34
+
+    (3) expression -> expression TIMES . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 56
+
+state 35
+
+    (10) expression -> expression LT . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 57
+
+state 36
+
+    (14) expression -> expression LE . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 58
+
+state 37
+
+    (2) expression -> expression PLUS . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 59
+
+state 38
+
+    (1) expression -> expression MINUS . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 60
+
+state 39
+
+    (8) expression -> expression OR . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 61
+
+state 40
+
+    (22) patron -> patron DOSPUNTOS . patron
+    (20) patron -> . constantes
+    (21) patron -> . variables
+    (22) patron -> . patron DOSPUNTOS patron
+    (23) patron -> . APAREN patron CPAREN
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    APAREN          shift and go to state 18
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    patron                         shift and go to state 62
+    variables                      shift and go to state 19
+    number                         shift and go to state 3
+    constantes                     shift and go to state 21
+    true                           shift and go to state 6
+
+state 41
+
+    (23) patron -> APAREN patron . CPAREN
+    (22) patron -> patron . DOSPUNTOS patron
+
+    CPAREN          shift and go to state 63
+    DOSPUNTOS       shift and go to state 40
+
+
+state 42
+
+    (33) listapat -> listapat patron .
+    (22) patron -> patron . DOSPUNTOS patron
+
+    FLECHA          reduce using rule 33 (listapat -> listapat patron .)
+    APAREN          reduce using rule 33 (listapat -> listapat patron .)
+    ID              reduce using rule 33 (listapat -> listapat patron .)
+    NUMBER          reduce using rule 33 (listapat -> listapat patron .)
+    FALSE           reduce using rule 33 (listapat -> listapat patron .)
+    TRUE            reduce using rule 33 (listapat -> listapat patron .)
+    DOSPUNTOS       shift and go to state 40
+
+
+state 43
+
+    (35) gen -> listapat FLECHA . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 64
+
+state 44
+
+    (36) gen -> gen PIPE . listapat FLECHA expression
+    (33) listapat -> . listapat patron
+    (34) listapat -> . patron
+    (20) patron -> . constantes
+    (21) patron -> . variables
+    (22) patron -> . patron DOSPUNTOS patron
+    (23) patron -> . APAREN patron CPAREN
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    APAREN          shift and go to state 18
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    patron                         shift and go to state 17
+    true                           shift and go to state 6
+    variables                      shift and go to state 19
+    listapat                       shift and go to state 65
+    number                         shift and go to state 3
+    constantes                     shift and go to state 21
+
+state 45
+
+    (32) expression -> FUN gen NUF .
+
+    CPAREN          reduce using rule 32 (expression -> FUN gen NUF .)
+    MINUS           reduce using rule 32 (expression -> FUN gen NUF .)
+    PLUS            reduce using rule 32 (expression -> FUN gen NUF .)
+    TIMES           reduce using rule 32 (expression -> FUN gen NUF .)
+    DIVIDE          reduce using rule 32 (expression -> FUN gen NUF .)
+    AND             reduce using rule 32 (expression -> FUN gen NUF .)
+    OR              reduce using rule 32 (expression -> FUN gen NUF .)
+    GT              reduce using rule 32 (expression -> FUN gen NUF .)
+    LT              reduce using rule 32 (expression -> FUN gen NUF .)
+    EQ              reduce using rule 32 (expression -> FUN gen NUF .)
+    NE              reduce using rule 32 (expression -> FUN gen NUF .)
+    GE              reduce using rule 32 (expression -> FUN gen NUF .)
+    LE              reduce using rule 32 (expression -> FUN gen NUF .)
+    DOSPUNTOS       reduce using rule 32 (expression -> FUN gen NUF .)
+    $end            reduce using rule 32 (expression -> FUN gen NUF .)
+    THEN            reduce using rule 32 (expression -> FUN gen NUF .)
+    NUF             reduce using rule 32 (expression -> FUN gen NUF .)
+    PIPE            reduce using rule 32 (expression -> FUN gen NUF .)
+    ELSE            reduce using rule 32 (expression -> FUN gen NUF .)
+    IN              reduce using rule 32 (expression -> FUN gen NUF .)
+    FI              reduce using rule 32 (expression -> FUN gen NUF .)
+    TEL             reduce using rule 32 (expression -> FUN gen NUF .)
+
+
+state 46
+
+    (18) expression -> APAREN expression CPAREN .
+
+    CPAREN          reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    MINUS           reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    PLUS            reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    TIMES           reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    DIVIDE          reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    AND             reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    OR              reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    GT              reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    LT              reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    EQ              reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    NE              reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    GE              reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    LE              reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    DOSPUNTOS       reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    $end            reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    THEN            reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    NUF             reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    PIPE            reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    ELSE            reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    IN              reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    FI              reduce using rule 18 (expression -> APAREN expression CPAREN .)
+    TEL             reduce using rule 18 (expression -> APAREN expression CPAREN .)
+
+
+state 47
+
+    (17) expression -> IF expression THEN . expression ELSE expression FI
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 66
+
+state 48
+
+    (31) expression -> LET patron EQ . expression IN expression TEL
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 67
+
+state 49
+
+    (7) expression -> expression AND expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 7 (expression -> expression AND expression .)
+    MINUS           reduce using rule 7 (expression -> expression AND expression .)
+    PLUS            reduce using rule 7 (expression -> expression AND expression .)
+    TIMES           reduce using rule 7 (expression -> expression AND expression .)
+    DIVIDE          reduce using rule 7 (expression -> expression AND expression .)
+    AND             reduce using rule 7 (expression -> expression AND expression .)
+    OR              reduce using rule 7 (expression -> expression AND expression .)
+    GT              reduce using rule 7 (expression -> expression AND expression .)
+    LT              reduce using rule 7 (expression -> expression AND expression .)
+    EQ              reduce using rule 7 (expression -> expression AND expression .)
+    NE              reduce using rule 7 (expression -> expression AND expression .)
+    GE              reduce using rule 7 (expression -> expression AND expression .)
+    LE              reduce using rule 7 (expression -> expression AND expression .)
+    $end            reduce using rule 7 (expression -> expression AND expression .)
+    THEN            reduce using rule 7 (expression -> expression AND expression .)
+    NUF             reduce using rule 7 (expression -> expression AND expression .)
+    PIPE            reduce using rule 7 (expression -> expression AND expression .)
+    ELSE            reduce using rule 7 (expression -> expression AND expression .)
+    IN              reduce using rule 7 (expression -> expression AND expression .)
+    FI              reduce using rule 7 (expression -> expression AND expression .)
+    TEL             reduce using rule 7 (expression -> expression AND expression .)
+    DOSPUNTOS       shift and go to state 28
+
+  ! DOSPUNTOS       [ reduce using rule 7 (expression -> expression AND expression .) ]
+  ! MINUS           [ shift and go to state 38 ]
+  ! PLUS            [ shift and go to state 37 ]
+  ! TIMES           [ shift and go to state 34 ]
+  ! DIVIDE          [ shift and go to state 31 ]
+  ! AND             [ shift and go to state 27 ]
+  ! OR              [ shift and go to state 39 ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 50
+
+    (15) expression -> expression DOSPUNTOS expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    MINUS           reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    PLUS            reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    TIMES           reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    DIVIDE          reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    AND             reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    OR              reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    GT              reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    LT              reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    EQ              reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    NE              reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    GE              reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    LE              reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    $end            reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    THEN            reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    NUF             reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    PIPE            reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    ELSE            reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    IN              reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    FI              reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    TEL             reduce using rule 15 (expression -> expression DOSPUNTOS expression .)
+    DOSPUNTOS       shift and go to state 28
+
+  ! DOSPUNTOS       [ reduce using rule 15 (expression -> expression DOSPUNTOS expression .) ]
+  ! MINUS           [ shift and go to state 38 ]
+  ! PLUS            [ shift and go to state 37 ]
+  ! TIMES           [ shift and go to state 34 ]
+  ! DIVIDE          [ shift and go to state 31 ]
+  ! AND             [ shift and go to state 27 ]
+  ! OR              [ shift and go to state 39 ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 51
+
+    (9) expression -> expression GT expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 9 (expression -> expression GT expression .)
+    GT              reduce using rule 9 (expression -> expression GT expression .)
+    LT              reduce using rule 9 (expression -> expression GT expression .)
+    EQ              reduce using rule 9 (expression -> expression GT expression .)
+    NE              reduce using rule 9 (expression -> expression GT expression .)
+    GE              reduce using rule 9 (expression -> expression GT expression .)
+    LE              reduce using rule 9 (expression -> expression GT expression .)
+    $end            reduce using rule 9 (expression -> expression GT expression .)
+    THEN            reduce using rule 9 (expression -> expression GT expression .)
+    NUF             reduce using rule 9 (expression -> expression GT expression .)
+    PIPE            reduce using rule 9 (expression -> expression GT expression .)
+    ELSE            reduce using rule 9 (expression -> expression GT expression .)
+    IN              reduce using rule 9 (expression -> expression GT expression .)
+    FI              reduce using rule 9 (expression -> expression GT expression .)
+    TEL             reduce using rule 9 (expression -> expression GT expression .)
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    DOSPUNTOS       shift and go to state 28
+
+  ! MINUS           [ reduce using rule 9 (expression -> expression GT expression .) ]
+  ! PLUS            [ reduce using rule 9 (expression -> expression GT expression .) ]
+  ! TIMES           [ reduce using rule 9 (expression -> expression GT expression .) ]
+  ! DIVIDE          [ reduce using rule 9 (expression -> expression GT expression .) ]
+  ! AND             [ reduce using rule 9 (expression -> expression GT expression .) ]
+  ! OR              [ reduce using rule 9 (expression -> expression GT expression .) ]
+  ! DOSPUNTOS       [ reduce using rule 9 (expression -> expression GT expression .) ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 52
+
+    (13) expression -> expression GE expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 13 (expression -> expression GE expression .)
+    GT              reduce using rule 13 (expression -> expression GE expression .)
+    LT              reduce using rule 13 (expression -> expression GE expression .)
+    EQ              reduce using rule 13 (expression -> expression GE expression .)
+    NE              reduce using rule 13 (expression -> expression GE expression .)
+    GE              reduce using rule 13 (expression -> expression GE expression .)
+    LE              reduce using rule 13 (expression -> expression GE expression .)
+    $end            reduce using rule 13 (expression -> expression GE expression .)
+    THEN            reduce using rule 13 (expression -> expression GE expression .)
+    NUF             reduce using rule 13 (expression -> expression GE expression .)
+    PIPE            reduce using rule 13 (expression -> expression GE expression .)
+    ELSE            reduce using rule 13 (expression -> expression GE expression .)
+    IN              reduce using rule 13 (expression -> expression GE expression .)
+    FI              reduce using rule 13 (expression -> expression GE expression .)
+    TEL             reduce using rule 13 (expression -> expression GE expression .)
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    DOSPUNTOS       shift and go to state 28
+
+  ! MINUS           [ reduce using rule 13 (expression -> expression GE expression .) ]
+  ! PLUS            [ reduce using rule 13 (expression -> expression GE expression .) ]
+  ! TIMES           [ reduce using rule 13 (expression -> expression GE expression .) ]
+  ! DIVIDE          [ reduce using rule 13 (expression -> expression GE expression .) ]
+  ! AND             [ reduce using rule 13 (expression -> expression GE expression .) ]
+  ! OR              [ reduce using rule 13 (expression -> expression GE expression .) ]
+  ! DOSPUNTOS       [ reduce using rule 13 (expression -> expression GE expression .) ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 53
+
+    (4) expression -> expression DIVIDE expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 4 (expression -> expression DIVIDE expression .)
+    MINUS           reduce using rule 4 (expression -> expression DIVIDE expression .)
+    PLUS            reduce using rule 4 (expression -> expression DIVIDE expression .)
+    TIMES           reduce using rule 4 (expression -> expression DIVIDE expression .)
+    DIVIDE          reduce using rule 4 (expression -> expression DIVIDE expression .)
+    GT              reduce using rule 4 (expression -> expression DIVIDE expression .)
+    LT              reduce using rule 4 (expression -> expression DIVIDE expression .)
+    EQ              reduce using rule 4 (expression -> expression DIVIDE expression .)
+    NE              reduce using rule 4 (expression -> expression DIVIDE expression .)
+    GE              reduce using rule 4 (expression -> expression DIVIDE expression .)
+    LE              reduce using rule 4 (expression -> expression DIVIDE expression .)
+    $end            reduce using rule 4 (expression -> expression DIVIDE expression .)
+    THEN            reduce using rule 4 (expression -> expression DIVIDE expression .)
+    NUF             reduce using rule 4 (expression -> expression DIVIDE expression .)
+    PIPE            reduce using rule 4 (expression -> expression DIVIDE expression .)
+    ELSE            reduce using rule 4 (expression -> expression DIVIDE expression .)
+    IN              reduce using rule 4 (expression -> expression DIVIDE expression .)
+    FI              reduce using rule 4 (expression -> expression DIVIDE expression .)
+    TEL             reduce using rule 4 (expression -> expression DIVIDE expression .)
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    DOSPUNTOS       shift and go to state 28
+
+  ! AND             [ reduce using rule 4 (expression -> expression DIVIDE expression .) ]
+  ! OR              [ reduce using rule 4 (expression -> expression DIVIDE expression .) ]
+  ! DOSPUNTOS       [ reduce using rule 4 (expression -> expression DIVIDE expression .) ]
+  ! MINUS           [ shift and go to state 38 ]
+  ! PLUS            [ shift and go to state 37 ]
+  ! TIMES           [ shift and go to state 34 ]
+  ! DIVIDE          [ shift and go to state 31 ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 54
+
+    (11) expression -> expression EQ expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 11 (expression -> expression EQ expression .)
+    GT              reduce using rule 11 (expression -> expression EQ expression .)
+    LT              reduce using rule 11 (expression -> expression EQ expression .)
+    EQ              reduce using rule 11 (expression -> expression EQ expression .)
+    NE              reduce using rule 11 (expression -> expression EQ expression .)
+    GE              reduce using rule 11 (expression -> expression EQ expression .)
+    LE              reduce using rule 11 (expression -> expression EQ expression .)
+    $end            reduce using rule 11 (expression -> expression EQ expression .)
+    THEN            reduce using rule 11 (expression -> expression EQ expression .)
+    NUF             reduce using rule 11 (expression -> expression EQ expression .)
+    PIPE            reduce using rule 11 (expression -> expression EQ expression .)
+    ELSE            reduce using rule 11 (expression -> expression EQ expression .)
+    IN              reduce using rule 11 (expression -> expression EQ expression .)
+    FI              reduce using rule 11 (expression -> expression EQ expression .)
+    TEL             reduce using rule 11 (expression -> expression EQ expression .)
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    DOSPUNTOS       shift and go to state 28
+
+  ! MINUS           [ reduce using rule 11 (expression -> expression EQ expression .) ]
+  ! PLUS            [ reduce using rule 11 (expression -> expression EQ expression .) ]
+  ! TIMES           [ reduce using rule 11 (expression -> expression EQ expression .) ]
+  ! DIVIDE          [ reduce using rule 11 (expression -> expression EQ expression .) ]
+  ! AND             [ reduce using rule 11 (expression -> expression EQ expression .) ]
+  ! OR              [ reduce using rule 11 (expression -> expression EQ expression .) ]
+  ! DOSPUNTOS       [ reduce using rule 11 (expression -> expression EQ expression .) ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 55
+
+    (12) expression -> expression NE expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 12 (expression -> expression NE expression .)
+    GT              reduce using rule 12 (expression -> expression NE expression .)
+    LT              reduce using rule 12 (expression -> expression NE expression .)
+    EQ              reduce using rule 12 (expression -> expression NE expression .)
+    NE              reduce using rule 12 (expression -> expression NE expression .)
+    GE              reduce using rule 12 (expression -> expression NE expression .)
+    LE              reduce using rule 12 (expression -> expression NE expression .)
+    $end            reduce using rule 12 (expression -> expression NE expression .)
+    THEN            reduce using rule 12 (expression -> expression NE expression .)
+    NUF             reduce using rule 12 (expression -> expression NE expression .)
+    PIPE            reduce using rule 12 (expression -> expression NE expression .)
+    ELSE            reduce using rule 12 (expression -> expression NE expression .)
+    IN              reduce using rule 12 (expression -> expression NE expression .)
+    FI              reduce using rule 12 (expression -> expression NE expression .)
+    TEL             reduce using rule 12 (expression -> expression NE expression .)
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    DOSPUNTOS       shift and go to state 28
+
+  ! MINUS           [ reduce using rule 12 (expression -> expression NE expression .) ]
+  ! PLUS            [ reduce using rule 12 (expression -> expression NE expression .) ]
+  ! TIMES           [ reduce using rule 12 (expression -> expression NE expression .) ]
+  ! DIVIDE          [ reduce using rule 12 (expression -> expression NE expression .) ]
+  ! AND             [ reduce using rule 12 (expression -> expression NE expression .) ]
+  ! OR              [ reduce using rule 12 (expression -> expression NE expression .) ]
+  ! DOSPUNTOS       [ reduce using rule 12 (expression -> expression NE expression .) ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 56
+
+    (3) expression -> expression TIMES expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 3 (expression -> expression TIMES expression .)
+    MINUS           reduce using rule 3 (expression -> expression TIMES expression .)
+    PLUS            reduce using rule 3 (expression -> expression TIMES expression .)
+    TIMES           reduce using rule 3 (expression -> expression TIMES expression .)
+    DIVIDE          reduce using rule 3 (expression -> expression TIMES expression .)
+    GT              reduce using rule 3 (expression -> expression TIMES expression .)
+    LT              reduce using rule 3 (expression -> expression TIMES expression .)
+    EQ              reduce using rule 3 (expression -> expression TIMES expression .)
+    NE              reduce using rule 3 (expression -> expression TIMES expression .)
+    GE              reduce using rule 3 (expression -> expression TIMES expression .)
+    LE              reduce using rule 3 (expression -> expression TIMES expression .)
+    $end            reduce using rule 3 (expression -> expression TIMES expression .)
+    THEN            reduce using rule 3 (expression -> expression TIMES expression .)
+    NUF             reduce using rule 3 (expression -> expression TIMES expression .)
+    PIPE            reduce using rule 3 (expression -> expression TIMES expression .)
+    ELSE            reduce using rule 3 (expression -> expression TIMES expression .)
+    IN              reduce using rule 3 (expression -> expression TIMES expression .)
+    FI              reduce using rule 3 (expression -> expression TIMES expression .)
+    TEL             reduce using rule 3 (expression -> expression TIMES expression .)
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    DOSPUNTOS       shift and go to state 28
+
+  ! AND             [ reduce using rule 3 (expression -> expression TIMES expression .) ]
+  ! OR              [ reduce using rule 3 (expression -> expression TIMES expression .) ]
+  ! DOSPUNTOS       [ reduce using rule 3 (expression -> expression TIMES expression .) ]
+  ! MINUS           [ shift and go to state 38 ]
+  ! PLUS            [ shift and go to state 37 ]
+  ! TIMES           [ shift and go to state 34 ]
+  ! DIVIDE          [ shift and go to state 31 ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 57
+
+    (10) expression -> expression LT expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 10 (expression -> expression LT expression .)
+    GT              reduce using rule 10 (expression -> expression LT expression .)
+    LT              reduce using rule 10 (expression -> expression LT expression .)
+    EQ              reduce using rule 10 (expression -> expression LT expression .)
+    NE              reduce using rule 10 (expression -> expression LT expression .)
+    GE              reduce using rule 10 (expression -> expression LT expression .)
+    LE              reduce using rule 10 (expression -> expression LT expression .)
+    $end            reduce using rule 10 (expression -> expression LT expression .)
+    THEN            reduce using rule 10 (expression -> expression LT expression .)
+    NUF             reduce using rule 10 (expression -> expression LT expression .)
+    PIPE            reduce using rule 10 (expression -> expression LT expression .)
+    ELSE            reduce using rule 10 (expression -> expression LT expression .)
+    IN              reduce using rule 10 (expression -> expression LT expression .)
+    FI              reduce using rule 10 (expression -> expression LT expression .)
+    TEL             reduce using rule 10 (expression -> expression LT expression .)
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    DOSPUNTOS       shift and go to state 28
+
+  ! MINUS           [ reduce using rule 10 (expression -> expression LT expression .) ]
+  ! PLUS            [ reduce using rule 10 (expression -> expression LT expression .) ]
+  ! TIMES           [ reduce using rule 10 (expression -> expression LT expression .) ]
+  ! DIVIDE          [ reduce using rule 10 (expression -> expression LT expression .) ]
+  ! AND             [ reduce using rule 10 (expression -> expression LT expression .) ]
+  ! OR              [ reduce using rule 10 (expression -> expression LT expression .) ]
+  ! DOSPUNTOS       [ reduce using rule 10 (expression -> expression LT expression .) ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 58
+
+    (14) expression -> expression LE expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 14 (expression -> expression LE expression .)
+    GT              reduce using rule 14 (expression -> expression LE expression .)
+    LT              reduce using rule 14 (expression -> expression LE expression .)
+    EQ              reduce using rule 14 (expression -> expression LE expression .)
+    NE              reduce using rule 14 (expression -> expression LE expression .)
+    GE              reduce using rule 14 (expression -> expression LE expression .)
+    LE              reduce using rule 14 (expression -> expression LE expression .)
+    $end            reduce using rule 14 (expression -> expression LE expression .)
+    THEN            reduce using rule 14 (expression -> expression LE expression .)
+    NUF             reduce using rule 14 (expression -> expression LE expression .)
+    PIPE            reduce using rule 14 (expression -> expression LE expression .)
+    ELSE            reduce using rule 14 (expression -> expression LE expression .)
+    IN              reduce using rule 14 (expression -> expression LE expression .)
+    FI              reduce using rule 14 (expression -> expression LE expression .)
+    TEL             reduce using rule 14 (expression -> expression LE expression .)
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    DOSPUNTOS       shift and go to state 28
+
+  ! MINUS           [ reduce using rule 14 (expression -> expression LE expression .) ]
+  ! PLUS            [ reduce using rule 14 (expression -> expression LE expression .) ]
+  ! TIMES           [ reduce using rule 14 (expression -> expression LE expression .) ]
+  ! DIVIDE          [ reduce using rule 14 (expression -> expression LE expression .) ]
+  ! AND             [ reduce using rule 14 (expression -> expression LE expression .) ]
+  ! OR              [ reduce using rule 14 (expression -> expression LE expression .) ]
+  ! DOSPUNTOS       [ reduce using rule 14 (expression -> expression LE expression .) ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 59
+
+    (2) expression -> expression PLUS expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 2 (expression -> expression PLUS expression .)
+    MINUS           reduce using rule 2 (expression -> expression PLUS expression .)
+    PLUS            reduce using rule 2 (expression -> expression PLUS expression .)
+    GT              reduce using rule 2 (expression -> expression PLUS expression .)
+    LT              reduce using rule 2 (expression -> expression PLUS expression .)
+    EQ              reduce using rule 2 (expression -> expression PLUS expression .)
+    NE              reduce using rule 2 (expression -> expression PLUS expression .)
+    GE              reduce using rule 2 (expression -> expression PLUS expression .)
+    LE              reduce using rule 2 (expression -> expression PLUS expression .)
+    $end            reduce using rule 2 (expression -> expression PLUS expression .)
+    THEN            reduce using rule 2 (expression -> expression PLUS expression .)
+    NUF             reduce using rule 2 (expression -> expression PLUS expression .)
+    PIPE            reduce using rule 2 (expression -> expression PLUS expression .)
+    ELSE            reduce using rule 2 (expression -> expression PLUS expression .)
+    IN              reduce using rule 2 (expression -> expression PLUS expression .)
+    FI              reduce using rule 2 (expression -> expression PLUS expression .)
+    TEL             reduce using rule 2 (expression -> expression PLUS expression .)
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    DOSPUNTOS       shift and go to state 28
+
+  ! TIMES           [ reduce using rule 2 (expression -> expression PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 2 (expression -> expression PLUS expression .) ]
+  ! AND             [ reduce using rule 2 (expression -> expression PLUS expression .) ]
+  ! OR              [ reduce using rule 2 (expression -> expression PLUS expression .) ]
+  ! DOSPUNTOS       [ reduce using rule 2 (expression -> expression PLUS expression .) ]
+  ! MINUS           [ shift and go to state 38 ]
+  ! PLUS            [ shift and go to state 37 ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 60
+
+    (1) expression -> expression MINUS expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 1 (expression -> expression MINUS expression .)
+    MINUS           reduce using rule 1 (expression -> expression MINUS expression .)
+    PLUS            reduce using rule 1 (expression -> expression MINUS expression .)
+    GT              reduce using rule 1 (expression -> expression MINUS expression .)
+    LT              reduce using rule 1 (expression -> expression MINUS expression .)
+    EQ              reduce using rule 1 (expression -> expression MINUS expression .)
+    NE              reduce using rule 1 (expression -> expression MINUS expression .)
+    GE              reduce using rule 1 (expression -> expression MINUS expression .)
+    LE              reduce using rule 1 (expression -> expression MINUS expression .)
+    $end            reduce using rule 1 (expression -> expression MINUS expression .)
+    THEN            reduce using rule 1 (expression -> expression MINUS expression .)
+    NUF             reduce using rule 1 (expression -> expression MINUS expression .)
+    PIPE            reduce using rule 1 (expression -> expression MINUS expression .)
+    ELSE            reduce using rule 1 (expression -> expression MINUS expression .)
+    IN              reduce using rule 1 (expression -> expression MINUS expression .)
+    FI              reduce using rule 1 (expression -> expression MINUS expression .)
+    TEL             reduce using rule 1 (expression -> expression MINUS expression .)
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    DOSPUNTOS       shift and go to state 28
+
+  ! TIMES           [ reduce using rule 1 (expression -> expression MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 1 (expression -> expression MINUS expression .) ]
+  ! AND             [ reduce using rule 1 (expression -> expression MINUS expression .) ]
+  ! OR              [ reduce using rule 1 (expression -> expression MINUS expression .) ]
+  ! DOSPUNTOS       [ reduce using rule 1 (expression -> expression MINUS expression .) ]
+  ! MINUS           [ shift and go to state 38 ]
+  ! PLUS            [ shift and go to state 37 ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 61
+
+    (8) expression -> expression OR expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    CPAREN          reduce using rule 8 (expression -> expression OR expression .)
+    MINUS           reduce using rule 8 (expression -> expression OR expression .)
+    PLUS            reduce using rule 8 (expression -> expression OR expression .)
+    TIMES           reduce using rule 8 (expression -> expression OR expression .)
+    DIVIDE          reduce using rule 8 (expression -> expression OR expression .)
+    AND             reduce using rule 8 (expression -> expression OR expression .)
+    OR              reduce using rule 8 (expression -> expression OR expression .)
+    GT              reduce using rule 8 (expression -> expression OR expression .)
+    LT              reduce using rule 8 (expression -> expression OR expression .)
+    EQ              reduce using rule 8 (expression -> expression OR expression .)
+    NE              reduce using rule 8 (expression -> expression OR expression .)
+    GE              reduce using rule 8 (expression -> expression OR expression .)
+    LE              reduce using rule 8 (expression -> expression OR expression .)
+    $end            reduce using rule 8 (expression -> expression OR expression .)
+    THEN            reduce using rule 8 (expression -> expression OR expression .)
+    NUF             reduce using rule 8 (expression -> expression OR expression .)
+    PIPE            reduce using rule 8 (expression -> expression OR expression .)
+    ELSE            reduce using rule 8 (expression -> expression OR expression .)
+    IN              reduce using rule 8 (expression -> expression OR expression .)
+    FI              reduce using rule 8 (expression -> expression OR expression .)
+    TEL             reduce using rule 8 (expression -> expression OR expression .)
+    DOSPUNTOS       shift and go to state 28
+
+  ! DOSPUNTOS       [ reduce using rule 8 (expression -> expression OR expression .) ]
+  ! MINUS           [ shift and go to state 38 ]
+  ! PLUS            [ shift and go to state 37 ]
+  ! TIMES           [ shift and go to state 34 ]
+  ! DIVIDE          [ shift and go to state 31 ]
+  ! AND             [ shift and go to state 27 ]
+  ! OR              [ shift and go to state 39 ]
+  ! GT              [ shift and go to state 29 ]
+  ! LT              [ shift and go to state 35 ]
+  ! EQ              [ shift and go to state 32 ]
+  ! NE              [ shift and go to state 33 ]
+  ! GE              [ shift and go to state 30 ]
+  ! LE              [ shift and go to state 36 ]
+
+
+state 62
+
+    (22) patron -> patron DOSPUNTOS patron .
+    (22) patron -> patron . DOSPUNTOS patron
+
+    FLECHA          reduce using rule 22 (patron -> patron DOSPUNTOS patron .)
+    APAREN          reduce using rule 22 (patron -> patron DOSPUNTOS patron .)
+    ID              reduce using rule 22 (patron -> patron DOSPUNTOS patron .)
+    NUMBER          reduce using rule 22 (patron -> patron DOSPUNTOS patron .)
+    FALSE           reduce using rule 22 (patron -> patron DOSPUNTOS patron .)
+    TRUE            reduce using rule 22 (patron -> patron DOSPUNTOS patron .)
+    EQ              reduce using rule 22 (patron -> patron DOSPUNTOS patron .)
+    CPAREN          reduce using rule 22 (patron -> patron DOSPUNTOS patron .)
+    DOSPUNTOS       shift and go to state 40
+
+  ! DOSPUNTOS       [ reduce using rule 22 (patron -> patron DOSPUNTOS patron .) ]
+
+
+state 63
+
+    (23) patron -> APAREN patron CPAREN .
+
+    DOSPUNTOS       reduce using rule 23 (patron -> APAREN patron CPAREN .)
+    FLECHA          reduce using rule 23 (patron -> APAREN patron CPAREN .)
+    APAREN          reduce using rule 23 (patron -> APAREN patron CPAREN .)
+    ID              reduce using rule 23 (patron -> APAREN patron CPAREN .)
+    NUMBER          reduce using rule 23 (patron -> APAREN patron CPAREN .)
+    FALSE           reduce using rule 23 (patron -> APAREN patron CPAREN .)
+    TRUE            reduce using rule 23 (patron -> APAREN patron CPAREN .)
+    EQ              reduce using rule 23 (patron -> APAREN patron CPAREN .)
+    CPAREN          reduce using rule 23 (patron -> APAREN patron CPAREN .)
+
+
+state 64
+
+    (35) gen -> listapat FLECHA expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    NUF             reduce using rule 35 (gen -> listapat FLECHA expression .)
+    PIPE            reduce using rule 35 (gen -> listapat FLECHA expression .)
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    GT              shift and go to state 29
+    LT              shift and go to state 35
+    EQ              shift and go to state 32
+    NE              shift and go to state 33
+    GE              shift and go to state 30
+    LE              shift and go to state 36
+    DOSPUNTOS       shift and go to state 28
+
+
+state 65
+
+    (36) gen -> gen PIPE listapat . FLECHA expression
+    (33) listapat -> listapat . patron
+    (20) patron -> . constantes
+    (21) patron -> . variables
+    (22) patron -> . patron DOSPUNTOS patron
+    (23) patron -> . APAREN patron CPAREN
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    FLECHA          shift and go to state 68
+    APAREN          shift and go to state 18
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    patron                         shift and go to state 42
+    true                           shift and go to state 6
+    variables                      shift and go to state 19
+    number                         shift and go to state 3
+    constantes                     shift and go to state 21
+
+state 66
+
+    (17) expression -> IF expression THEN expression . ELSE expression FI
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    ELSE            shift and go to state 69
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    GT              shift and go to state 29
+    LT              shift and go to state 35
+    EQ              shift and go to state 32
+    NE              shift and go to state 33
+    GE              shift and go to state 30
+    LE              shift and go to state 36
+    DOSPUNTOS       shift and go to state 28
+
+
+state 67
+
+    (31) expression -> LET patron EQ expression . IN expression TEL
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    IN              shift and go to state 70
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    GT              shift and go to state 29
+    LT              shift and go to state 35
+    EQ              shift and go to state 32
+    NE              shift and go to state 33
+    GE              shift and go to state 30
+    LE              shift and go to state 36
+    DOSPUNTOS       shift and go to state 28
+
+
+state 68
+
+    (36) gen -> gen PIPE listapat FLECHA . expression
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 71
+
+state 69
+
+    (17) expression -> IF expression THEN expression ELSE . expression FI
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 72
+
+state 70
+
+    (31) expression -> LET patron EQ expression IN . expression TEL
+    (1) expression -> . expression MINUS expression
+    (2) expression -> . expression PLUS expression
+    (3) expression -> . expression TIMES expression
+    (4) expression -> . expression DIVIDE expression
+    (5) expression -> . constantes
+    (6) expression -> . variables
+    (7) expression -> . expression AND expression
+    (8) expression -> . expression OR expression
+    (9) expression -> . expression GT expression
+    (10) expression -> . expression LT expression
+    (11) expression -> . expression EQ expression
+    (12) expression -> . expression NE expression
+    (13) expression -> . expression GE expression
+    (14) expression -> . expression LE expression
+    (15) expression -> . expression DOSPUNTOS expression
+    (16) expression -> . NOT expression
+    (17) expression -> . IF expression THEN expression ELSE expression FI
+    (18) expression -> . APAREN expression CPAREN
+    (19) expression -> . LISTA
+    (31) expression -> . LET patron EQ expression IN expression TEL
+    (32) expression -> . FUN gen NUF
+    (25) constantes -> . number
+    (26) constantes -> . false
+    (27) constantes -> . true
+    (24) variables -> . ID
+    (28) number -> . NUMBER
+    (30) false -> . FALSE
+    (29) true -> . TRUE
+
+    NOT             shift and go to state 14
+    IF              shift and go to state 10
+    APAREN          shift and go to state 9
+    LISTA           shift and go to state 12
+    LET             shift and go to state 13
+    FUN             shift and go to state 4
+    ID              shift and go to state 7
+    NUMBER          shift and go to state 8
+    FALSE           shift and go to state 11
+    TRUE            shift and go to state 5
+
+    false                          shift and go to state 1
+    true                           shift and go to state 6
+    variables                      shift and go to state 2
+    number                         shift and go to state 3
+    constantes                     shift and go to state 15
+    expression                     shift and go to state 73
+
+state 71
+
+    (36) gen -> gen PIPE listapat FLECHA expression .
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    NUF             reduce using rule 36 (gen -> gen PIPE listapat FLECHA expression .)
+    PIPE            reduce using rule 36 (gen -> gen PIPE listapat FLECHA expression .)
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    GT              shift and go to state 29
+    LT              shift and go to state 35
+    EQ              shift and go to state 32
+    NE              shift and go to state 33
+    GE              shift and go to state 30
+    LE              shift and go to state 36
+    DOSPUNTOS       shift and go to state 28
+
+
+state 72
+
+    (17) expression -> IF expression THEN expression ELSE expression . FI
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    FI              shift and go to state 74
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    GT              shift and go to state 29
+    LT              shift and go to state 35
+    EQ              shift and go to state 32
+    NE              shift and go to state 33
+    GE              shift and go to state 30
+    LE              shift and go to state 36
+    DOSPUNTOS       shift and go to state 28
+
+
+state 73
+
+    (31) expression -> LET patron EQ expression IN expression . TEL
+    (1) expression -> expression . MINUS expression
+    (2) expression -> expression . PLUS expression
+    (3) expression -> expression . TIMES expression
+    (4) expression -> expression . DIVIDE expression
+    (7) expression -> expression . AND expression
+    (8) expression -> expression . OR expression
+    (9) expression -> expression . GT expression
+    (10) expression -> expression . LT expression
+    (11) expression -> expression . EQ expression
+    (12) expression -> expression . NE expression
+    (13) expression -> expression . GE expression
+    (14) expression -> expression . LE expression
+    (15) expression -> expression . DOSPUNTOS expression
+
+    TEL             shift and go to state 75
+    MINUS           shift and go to state 38
+    PLUS            shift and go to state 37
+    TIMES           shift and go to state 34
+    DIVIDE          shift and go to state 31
+    AND             shift and go to state 27
+    OR              shift and go to state 39
+    GT              shift and go to state 29
+    LT              shift and go to state 35
+    EQ              shift and go to state 32
+    NE              shift and go to state 33
+    GE              shift and go to state 30
+    LE              shift and go to state 36
+    DOSPUNTOS       shift and go to state 28
+
+
+state 74
+
+    (17) expression -> IF expression THEN expression ELSE expression FI .
+
+    CPAREN          reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    MINUS           reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    PLUS            reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    TIMES           reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    DIVIDE          reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    AND             reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    OR              reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    GT              reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    LT              reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    EQ              reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    NE              reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    GE              reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    LE              reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    DOSPUNTOS       reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    $end            reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    THEN            reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    NUF             reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    PIPE            reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    ELSE            reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    IN              reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    FI              reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+    TEL             reduce using rule 17 (expression -> IF expression THEN expression ELSE expression FI .)
+
+
+state 75
+
+    (31) expression -> LET patron EQ expression IN expression TEL .
+
+    CPAREN          reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    MINUS           reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    PLUS            reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    TIMES           reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    DIVIDE          reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    AND             reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    OR              reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    GT              reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    LT              reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    EQ              reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    NE              reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    GE              reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    LE              reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    DOSPUNTOS       reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    $end            reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    THEN            reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    NUF             reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    PIPE            reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    ELSE            reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    IN              reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    FI              reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+    TEL             reduce using rule 31 (expression -> LET patron EQ expression IN expression TEL .)
+
