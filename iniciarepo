@@ -1,8 +1,0 @@
-  mkdir Analizador-Sintactico-Melon
-  cd Analizador-Sintactico-Melon
-  git init
-  touch README
-  git add README
-  git commit -m 'first commit'
-  git remote add origin git@github.com:josej30/Analizador-Sintactico-Melon.git
-  git push origin master
